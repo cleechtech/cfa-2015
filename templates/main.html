@@ -1,17 +1,2 @@
-<h3>Click table headers to sort by population or housing density</h3>
-<table class="table table-striped" st-table='tracts' st-safe-src='tracts'>
-	<thead>
-	  <tr>
-	    <th>Name</th>
-	    <th st-sort='population'>Population</th>
-	    <th st-sort='housingDensity'>Housing Density</th>
-	  </tr>
-	</thead>
-	<tbody>
-	  <tr ng-repeat='tract in tracts'>
-	    <td>{{tract.name}}</td>
-	    <td>{{tract.population}}</td>
-	    <td>{{tract.housingDensity}}</td>
-	  </tr>
-	</tbody>
-</table>
+
+<div ag-grid="gridOptions" class="ag-fresh" style="height:100%"></div>

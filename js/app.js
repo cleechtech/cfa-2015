@@ -1,7 +1,7 @@
 
 var app = angular.module('census-tracts', [
 	'ui.router',
-	'smart-table'
+	"angularGrid"
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider){
