@@ -1,21 +1,9 @@
 
 var app = angular.module('census-tracts', [
-	'ui.router',
 	"angularGrid"
 ]);
 
-app.config(function($stateProvider, $urlRouterProvider){
-
-	$urlRouterProvider.otherwise("/");
-
-	$stateProvider
-	    .state('home', {
-	      url: "/",
-	      templateUrl: "templates/main.html",
-	      controller: 'MainCtrl'
-	    })
-});
-
+// Factory
 app.factory('Tracts', function($q){
 	var dfd = $q.defer();
 
@@ -42,4 +30,31 @@ app.factory('Tracts', function($q){
 	});
 
 	return dfd.promise;
+});
+
+// Controller
+app.controller('MainCtrl', function($scope, Tracts){
+
+    // Define columns
+	var columnDefs = [
+        { headerName: "Name", field: "name", unSortIcon: true },
+        { headerName: "Population", field: "population", sort: 'desc', unSortIcon: true },
+        { headerName: "Housing Density", field: "housingDensity", unSortIcon: true }
+    ];
+
+	$scope.gridOptions = {
+        columnDefs: columnDefs,
+        rowData: null,
+        dontUseScrolls: true,
+        enableSorting: true
+    };
+
+    // load data
+	Tracts.then(function(tracts){
+	    $scope.gridOptions.rowData = tracts;
+
+	    // update grid
+	    $scope.gridOptions.api.onNewRows();
+	});
+
 });

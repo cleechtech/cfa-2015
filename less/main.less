@@ -1,59 +1,63 @@
+@gridborderradius: 8px;
+
 .userlist-title {
-  padding-bottom: 8px;
+  padding-bottom:8px;
+  span {
+    font-size: 19px;
+  }
 }
-.userlist-title span {
-  font-size: 19px;
-}
+
 .ag-userlist .ag-root {
   border: 2px solid #808080;
-  border-radius: 8px;
+  border-radius: @gridborderradius;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .ag-userlist .ag-body {
-  border-radius: 8px;
-}
-.ag-userlist .ag-body .ag-body-viewport {
-  border-radius: 0 0 8px 8px;
+  border-radius: @gridborderradius;
+  .ag-body-viewport {
+    border-radius: 0 0 @gridborderradius @gridborderradius;
+  }
 }
 .ag-userlist .ag-cell {
   padding: 8px;
   padding: 8px 8px 8px 8px;
-  background-color: transparent;
-  cursor: pointer;
+  background-color:transparent;
+  cursor:pointer;
 }
 .ag-userlist .ag-cell-focus {
-  outline: none !important;
-  border: none !important;
-  background-color: transparent;
+  outline:none !important;
+  border:none !important;
+  background-color:transparent;
 }
 .ag-userlist .ag-cell-no-focus {
-  border-right-color: transparent;
+  border-right-color:transparent;
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
   border-bottom: 1px solid transparent;
 }
 .ag-userlist .ag-pinned-header {
-  background: -webkit-linear-gradient(#ffffff, #d3d3d3);
-  background: -moz-linear-gradient(#ffffff, #d3d3d3);
-  background: -o-linear-gradient(#ffffff, #d3d3d3);
-  background: -ms-linear-gradient(#ffffff, #d3d3d3);
-  background: linear-gradient(#ffffff, #d3d3d3);
+  background: -webkit-linear-gradient(#fff, #d3d3d3);
+  background: -moz-linear-gradient(#fff, #d3d3d3);
+  background: -o-linear-gradient(#fff, #d3d3d3);
+  background: -ms-linear-gradient(#fff, #d3d3d3);
+  background: linear-gradient(#fff, #d3d3d3);
   border-bottom: 1px solid #808080;
 }
 .ag-userlist .ag-header-container {
-  background: -webkit-linear-gradient(#ffffff, #d3d3d3);
-  background: -moz-linear-gradient(#ffffff, #d3d3d3);
-  background: -o-linear-gradient(#ffffff, #d3d3d3);
-  background: -ms-linear-gradient(#ffffff, #d3d3d3);
-  background: linear-gradient(#ffffff, #d3d3d3);
+  background: -webkit-linear-gradient(#fff, #d3d3d3);
+  background: -moz-linear-gradient(#fff, #d3d3d3);
+  background: -o-linear-gradient(#fff, #d3d3d3);
+  background: -ms-linear-gradient(#fff, #d3d3d3);
+  background: linear-gradient(#fff, #d3d3d3);
   border-bottom: 1px solid #808080;
 }
+
 .ag-userlist .ag-header {
-  border-radius: 8px 8px 0 0;
-  border-bottom: none;
-}
-.ag-userlist .ag-header .ag-header-viewport {
-  border-radius: 8px 8px 0 0;
+  border-radius: @gridborderradius @gridborderradius 0 0;
+  border-bottom:none;
+  .ag-header-viewport {
+    border-radius: @gridborderradius @gridborderradius 0 0;
+  }
 }
 .ag-userlist .ag-header-cell {
   white-space: nowrap;
@@ -65,13 +69,14 @@
   color: #607c7c;
   border-right: 1px solid transparent;
   padding: 8px 8px 8px 8px;
-}
-.ag-userlist .ag-header-cell .ag-header-cell-label {
-  text-align: left;
-  padding: 0 0 0 0;
-}
-.ag-userlist .ag-header-cell .ag-header-cell-label .ag-header-cell-text {
-  text-align: left;
+  .ag-header-cell-label {
+    text-align:left;
+    padding:0 0 0 0;
+    .ag-header-cell-text {
+      text-align:left;
+    }
+  }
+
 }
 .ag-userlist .ag-header-group-cell {
   border-right: 1px solid #808080;
@@ -100,8 +105,7 @@
   border-radius: 3px;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  /* When using bootstrap, box-sizing was set to 'border-box' */
+  box-sizing: content-box; /* When using bootstrap, box-sizing was set to 'border-box' */
 }
 .ag-userlist .ag-header-cell-menu-button:hover {
   border: 1px solid #000;
@@ -126,9 +130,9 @@
   height: 37px;
   line-height: 20px;
   vertical-align: middle;
-}
-.ag-userlist .ag-row:hover {
-  background-color: #D9E2E2;
+  &:hover {
+    background-color:#D9E2E2;
+  }
 }
 .ag-userlist .ag-row-odd {
   background-color: #F4F7F7;
@@ -137,7 +141,7 @@
   background-color: #FFFFFF;
 }
 .ag-userlist .ag-loading-panel {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255,255,255,0.5);
 }
 .ag-userlist .ag-loading-center {
   background-color: #fff;
